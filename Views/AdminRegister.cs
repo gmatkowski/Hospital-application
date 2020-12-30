@@ -56,7 +56,7 @@ namespace HospitalApp.Views
                 admin.username = username;
                 admin.first_name = first_name;
                 admin.last_name = last_name;
-                admin.password = BCrypt.Net.BCrypt.HashPassword(password);
+                admin.password = password.Length > 0 ? BCrypt.Net.BCrypt.HashPassword(password): password;
 
                 this.repository.Insert(admin);
                 Redirect.GoToLogin(this);

@@ -45,3 +45,4 @@ c:\Users\gmatk\source\repos\HospitalApp\bin\Debug\System.Buffers.xml
 c:\Users\gmatk\source\repos\HospitalApp\bin\Debug\BCrypt.Net-Core.dll
 c:\Users\gmatk\source\repos\HospitalApp\bin\Debug\BCrypt.Net-Core.pdb
 c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Views.Dashboard.resources
+c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Views.UserForm.resources

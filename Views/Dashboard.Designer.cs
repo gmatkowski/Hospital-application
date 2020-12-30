@@ -31,18 +31,17 @@ namespace HospitalApp.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.MinimumSize = new Size(900, 600);
-            this.MaximumSize = new Size(900, 600);
-
             this.logout = new System.Windows.Forms.Button();
             this.logged_as = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.users_table = new System.Windows.Forms.DataGridView();
+            this.adduser = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.users_table)).BeginInit();
             this.SuspendLayout();
             // 
             // logout
             // 
-            this.logout.BackColor = System.Drawing.Color.Teal;
+            this.logout.BackColor = System.Drawing.Color.Gray;
             this.logout.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -86,16 +85,47 @@ namespace HospitalApp.Views
             this.label1.TabIndex = 2;
             this.label1.Text = ":Zalogowano jako";
             // 
+            // users_table
+            // 
+            this.users_table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.users_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.users_table.Location = new System.Drawing.Point(12, 83);
+            this.users_table.MultiSelect = false;
+            this.users_table.Name = "users_table";
+            this.users_table.ReadOnly = true;
+            this.users_table.Size = new System.Drawing.Size(860, 175);
+            this.users_table.TabIndex = 3;
+            // 
+            // adduser
+            // 
+            this.adduser.BackColor = System.Drawing.Color.Teal;
+            this.adduser.FlatAppearance.BorderSize = 0;
+            this.adduser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adduser.ForeColor = System.Drawing.Color.White;
+            this.adduser.Location = new System.Drawing.Point(12, 38);
+            this.adduser.Name = "adduser";
+            this.adduser.Size = new System.Drawing.Size(108, 23);
+            this.adduser.TabIndex = 4;
+            this.adduser.Text = "Dodaj użytkownika";
+            this.adduser.UseVisualStyleBackColor = false;
+            this.adduser.Click += new System.EventHandler(this.adduser_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.adduser);
+            this.Controls.Add(this.users_table);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logged_as);
             this.Controls.Add(this.logout);
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            ((System.ComponentModel.ISupportInitialize)(this.users_table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +136,15 @@ namespace HospitalApp.Views
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Label logged_as;
         private System.Windows.Forms.Label label1;
+        private DataGridView users_table;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn first_name;
+        private DataGridViewTextBoxColumn last_name;
+        private DataGridViewTextBoxColumn role;
+        private DataGridViewTextBoxColumn specialization;
+        private DataGridViewButtonColumn shifts;
+        private DataGridViewButtonColumn edit;
+        private DataGridViewButtonColumn delete;
+        private Button adduser;
     }
 }
