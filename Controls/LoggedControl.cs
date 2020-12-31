@@ -57,7 +57,7 @@ namespace HospitalApp.Controls
             this.logged_as.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.logged_as.Size = new System.Drawing.Size(85, 27);
             this.logged_as.TabIndex = 1;
-            this.logged_as.Text = "gmatkowski";
+            this.logged_as.Text = Program.AuthenticatedUser.full_name;
             this.logged_as.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // logged_as_label

@@ -78,18 +78,17 @@
             // 
             // date_error
             // 
-            this.date_error.AutoSize = true;
             this.date_error.ForeColor = System.Drawing.Color.Red;
-            this.date_error.Location = new System.Drawing.Point(38, 127);
+            this.date_error.Location = new System.Drawing.Point(38, 117);
             this.date_error.Name = "date_error";
-            this.date_error.Size = new System.Drawing.Size(0, 13);
+            this.date_error.Size = new System.Drawing.Size(233, 32);
             this.date_error.TabIndex = 8;
             // 
             // ShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 245);
+            this.ClientSize = new System.Drawing.Size(330, 240);
             this.Controls.Add(this.date_error);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

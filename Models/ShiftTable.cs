@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace HospitalApp.Models
 {
-    class ShiftTable
+    public class ShiftTable
     {
         [DisplayName("Id")]
         public int id { get; set; }

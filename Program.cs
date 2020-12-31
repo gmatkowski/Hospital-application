@@ -7,6 +7,7 @@ using HospitalApp.Views;
 using Hospital.DB;
 using Hospital.Repositories;
 using Hospital.Abstracts;
+using System.Data.Entity.Core;
 
 namespace HospitalApp
 {
@@ -36,22 +37,30 @@ namespace HospitalApp
     {
         public void StartApplication()
         {
-            HospitalContext context = new HospitalContext("HospitalDbContext");
-
-            DatabaseBootstrapper bs = new DatabaseBootstrapper();
-            bs.Configure(context);
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            UserRepository repository = new UserRepository(context);
-            if (repository.HasAdmins())
+            try
             {
-                Application.Run(new Login());
-                return;
-            }
+                HospitalContext context = new HospitalContext("HospitalDbContext");
 
-            Application.Run(new AdminRegister());
+                DatabaseBootstrapper bs = new DatabaseBootstrapper();
+                bs.Configure(context);
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                UserRepository repository = new UserRepository(context);
+                if (repository.HasAdmins())
+                {
+                    Application.Run(new Login());
+                    return;
+                }
+
+                Application.Run(new AdminRegister());
+            }
+            catch (ProviderIncompatibleException ex)
+            {
+                MessageBox.Show("Nie udało połączyć się z bazą danych, sprawdź plik konfiguracyjny");
+                Application.Exit();
+            }
         }
     }
 }

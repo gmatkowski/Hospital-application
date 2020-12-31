@@ -19,6 +19,8 @@ namespace HospitalApp.Views
 {
     public partial class Dashboard : Form
     {
+        FormHelper formHelper = new FormHelper();
+
         public Dashboard()
         {
             InitializeComponent();
@@ -209,7 +211,7 @@ namespace HospitalApp.Views
                 return;
             }
 
-            int index = this.FindIndex(user);
+            int index = this.formHelper.FindIndex(this.users_table, user.id);
             if(index == -1)
             {
                 MessageBox.Show(String.Format("Nie ma takiego użytkownika"));
@@ -220,41 +222,6 @@ namespace HospitalApp.Views
             this.GetRepository().Delete(user.original_user);
 
             MessageBox.Show(String.Format("Usunięto użytkownika {0}", user.fullname));
-        }
-
-        private int FindColumnIndex(string name)
-        {
-            int index = -1;
-            foreach (DataGridViewColumn column in this.users_table.Columns)
-            {
-                if (String.Equals(column.Name, name))
-                {
-                    index = column.Index;
-                    break;
-                }
-            }
-            return index;
-        }
-
-        private int FindIndex(UserTable user)
-        {
-            int rowIndex = -1;
-            int columnIndex = this.FindColumnIndex("id");
-            if(columnIndex == -1)
-            {
-                return rowIndex;
-            }
-
-            foreach (DataGridViewRow row in this.users_table.Rows)
-            {
-                if (String.Equals(user.id.ToString(), row.Cells[columnIndex].Value.ToString()))
-                {
-                    rowIndex = row.Index;
-                    break;
-                }
-            }
-
-            return rowIndex;
         }
 
         private void adduser_Click(object sender, EventArgs e)
