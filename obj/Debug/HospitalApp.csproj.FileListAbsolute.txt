@@ -48,3 +48,4 @@ c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.csproj.CoreCompile
 c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.csproj.CopyComplete
 c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.exe
 c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.pdb
+c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.csprojAssemblyReference.cache
