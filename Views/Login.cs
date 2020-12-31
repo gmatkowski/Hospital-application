@@ -29,6 +29,9 @@ namespace HospitalApp.Views
         public Login()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new Size(900, 600);
+            this.MaximumSize = new Size(900, 600);
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

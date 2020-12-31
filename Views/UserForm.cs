@@ -49,6 +49,9 @@ namespace HospitalApp.Views
         protected void Prepare()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new Size(900, 600);
+            this.MaximumSize = new Size(900, 600);
 
             this.HideAllNotCommonFields();
 

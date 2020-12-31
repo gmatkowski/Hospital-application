@@ -13,6 +13,7 @@ using Hospital.DB;
 using Hospital.Abstracts;
 using HospitalApp.Models;
 using Hospital.Models;
+using HospitalApp.Controls;
 
 namespace HospitalApp.Views
 {
@@ -21,7 +22,14 @@ namespace HospitalApp.Views
         public Dashboard()
         {
             InitializeComponent();
-            this.logged_as.Text = Program.AuthenticatedUser.full_name;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new Size(900, 600);
+            this.MaximumSize = new Size(900, 600);
+
+            LoggedControl loggedControl = new LoggedControl(this);
+            loggedControl.Dock = DockStyle.Right;
+
+            this.Controls.Add(loggedControl);
 
             this.SetTableProperties();
             this.Activated += new EventHandler(FormActivated);
@@ -165,13 +173,14 @@ namespace HospitalApp.Views
 
         public void ShiftButtonClicked(UserTable user)
         {
-            if(user.original_user is Admin)
+            if(!(user.original_user is Employee))
             {
-                MessageBox.Show(String.Format("Tylko lekarze oraz pielęgniarki mają dyżury."));
+                MessageBox.Show(String.Format("Tylko pracownicy mają dyżury."));
                 return;
             }
 
-            MessageBox.Show(String.Format("Clicked shift button for {0}", user.fullname));
+            Shifts form = new Shifts((Employee)user.original_user);
+            form.ShowDialog();
         }
 
         public void EditButtonClicked(UserTable user)

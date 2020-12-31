@@ -31,10 +31,6 @@ namespace HospitalApp.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.MinimumSize = new Size(900, 600);
-            this.MaximumSize = new Size(900, 600);
-
             this.label1 = new System.Windows.Forms.Label();
             this.username = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();

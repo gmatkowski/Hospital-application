@@ -46,3 +46,6 @@ c:\Users\gmatk\source\repos\HospitalApp\bin\Debug\BCrypt.Net-Core.dll
 c:\Users\gmatk\source\repos\HospitalApp\bin\Debug\BCrypt.Net-Core.pdb
 c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Views.Dashboard.resources
 c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Views.UserForm.resources
+c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Views.Shifts.resources
+c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Controls.LoggedControl.resources
+c:\Users\gmatk\source\repos\HospitalApp\obj\Debug\HospitalApp.Views.ShiftForm.resources

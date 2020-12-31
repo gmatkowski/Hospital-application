@@ -5,6 +5,7 @@ using HospitalApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HospitalApp.Views
@@ -12,13 +13,6 @@ namespace HospitalApp.Views
     public partial class AdminRegister : Form
     {
         FormHelper formHelper = new FormHelper();
-        UserRepository repository  {
-            get
-            {
-                return new UserRepository(new HospitalContext("HospitalDbContext"));
-            }
-        }
-
         Dictionary<string, string> replacers = new Dictionary<string, string>()
         {
             { "username", "Nazwa użytkownika"},
@@ -27,10 +21,18 @@ namespace HospitalApp.Views
             { "password", "Hasło"},
             { "password_confirmation", "Powtórz hasło"},
         };
-
+        UserRepository repository  {
+            get
+            {
+                return new UserRepository(new HospitalContext("HospitalDbContext"));
+            }
+        }
         public AdminRegister()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.MinimumSize = new Size(900, 600);
+            this.MaximumSize = new Size(900, 600);
         }
 
         private void RegisterAdminButton_Click(object sender, EventArgs e)
